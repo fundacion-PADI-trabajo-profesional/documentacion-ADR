@@ -23,6 +23,8 @@ Cada ADR documenta una decisión de diseño significativa: el contexto que la mo
 | [ADR-0011](0011-pruebas-de-contrato-frontend-backend.md) | Pruebas de Contrato entre Frontend y Backend | 
 | [ADR-0012](0012-gestion-de-secretos-google-cloud.md) | Gestión de Secretos con Google Cloud Secret Manager | 
 | [ADR-0013](0013-endurecimiento-capa-http.md) | Endurecimiento de la Capa HTTP (Helmet, CORS y Rate Limiting) | 
+| [ADR-0014](0014-manejo-diferenciado-errores-http.md) | Manejo Diferenciado de Errores HTTP (403 vs 500) | 
+| [ADR-0015](0015-proteccion-idor-endpoints-estadisticas-aula.md) | Protección IDOR en Endpoints de Estadísticas por Aula | 
 
 ---
 
