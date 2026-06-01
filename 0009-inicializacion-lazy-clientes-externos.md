@@ -1,3 +1,8 @@
+---
+title: "ADR-0009: Inicialización Lazy de Clientes Externos en Entorno Serverless"
+nav_order: 9
+---
+
 # ADR-0009: Inicialización Lazy de Clientes Externos en Entorno Serverless
 
 ## Contexto

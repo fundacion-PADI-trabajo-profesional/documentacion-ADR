@@ -1,3 +1,8 @@
+---
+title: Inicio
+nav_order: 0
+---
+
 # Registro de Decisiones de Arquitectura — Sistema PADI
 
 Este directorio contiene los Registros de Decisiones de Arquitectura (ADRs) del sistema de evaluación pedagógica desarrollado para Fundación PADI como trabajo profesional.

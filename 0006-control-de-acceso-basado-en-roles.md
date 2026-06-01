@@ -1,3 +1,8 @@
+---
+title: "ADR-0006: Control de Acceso Basado en Roles (RBAC)"
+nav_order: 6
+---
+
 # ADR-0006: Control de Acceso Basado en Roles (RBAC)
 
 ## Contexto

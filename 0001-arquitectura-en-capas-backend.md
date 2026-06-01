@@ -1,3 +1,8 @@
+---
+title: "ADR-0001: Arquitectura en Capas para el Backend"
+nav_order: 1
+---
+
 # ADR-0001: Arquitectura en Capas para el Backend
 
 ## Contexto

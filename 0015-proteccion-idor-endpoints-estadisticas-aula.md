@@ -1,3 +1,8 @@
+---
+title: "ADR-0015: Protección IDOR en Endpoints de Estadísticas por Aula"
+nav_order: 15
+---
+
 # ADR-0015: Protección IDOR en Endpoints de Estadísticas por Aula
 
 ## Contexto

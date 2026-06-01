@@ -1,3 +1,8 @@
+---
+title: "ADR-0002: Firebase Cloud Functions como Plataforma de Despliegue del Backend"
+nav_order: 2
+---
+
 # ADR-0002: Firebase Cloud Functions como Plataforma de Despliegue del Backend
 
 ## Contexto

@@ -1,3 +1,8 @@
+---
+title: "ADR-0012: Gestión de Secretos con Google Cloud Secret Manager"
+nav_order: 12
+---
+
 # ADR-0012: Gestión de Secretos con Google Cloud Secret Manager
 
 ## Contexto

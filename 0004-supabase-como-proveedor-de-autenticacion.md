@@ -1,3 +1,8 @@
+---
+title: "ADR-0004: Supabase como Proveedor de Autenticación"
+nav_order: 4
+---
+
 # ADR-0004: Supabase como Proveedor de Autenticación
 
 ## Contexto

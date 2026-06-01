@@ -1,3 +1,8 @@
+---
+title: "ADR-0007: React con TypeScript como Framework de Frontend"
+nav_order: 7
+---
+
 # ADR-0007: React con TypeScript como Framework de Frontend
 
 ## Contexto

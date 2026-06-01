@@ -1,3 +1,8 @@
+---
+title: "ADR-0014: Manejo Diferenciado de Errores HTTP (403 vs 500)"
+nav_order: 14
+---
+
 # ADR-0014: Manejo Diferenciado de Errores HTTP (403 vs 500)
 
 ## Contexto

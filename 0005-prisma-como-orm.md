@@ -1,3 +1,8 @@
+---
+title: "ADR-0005: Prisma como ORM para el Acceso a Datos"
+nav_order: 5
+---
+
 # ADR-0005: Prisma como ORM para el Acceso a Datos
 
 ## Contexto

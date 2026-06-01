@@ -1,3 +1,8 @@
+---
+title: "ADR-0013: Endurecimiento de la Capa HTTP (Helmet, CORS y Rate Limiting)"
+nav_order: 13
+---
+
 # ADR-0013: Endurecimiento de la Capa HTTP (Helmet, CORS y Rate Limiting)
 
 ## Contexto

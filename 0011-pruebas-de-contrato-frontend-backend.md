@@ -1,3 +1,8 @@
+---
+title: "ADR-0011: Pruebas de Contrato entre Frontend y Backend"
+nav_order: 11
+---
+
 # ADR-0011: Pruebas de Contrato entre Frontend y Backend
 
 ## Contexto

@@ -1,3 +1,8 @@
+---
+title: "ADR-0008: TanStack React Query para la Gestión del Estado del Servidor"
+nav_order: 8
+---
+
 # ADR-0008: TanStack React Query para la Gestión del Estado del Servidor
 
 ## Contexto

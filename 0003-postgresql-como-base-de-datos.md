@@ -1,3 +1,8 @@
+---
+title: "ADR-0003: PostgreSQL como Sistema de Gestión de Base de Datos"
+nav_order: 3
+---
+
 # ADR-0003: PostgreSQL como Sistema de Gestión de Base de Datos
 
 ## Contexto

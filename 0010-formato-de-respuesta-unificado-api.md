@@ -1,3 +1,8 @@
+---
+title: "ADR-0010: Formato de Respuesta Unificado en la API REST"
+nav_order: 10
+---
+
 # ADR-0010: Formato de Respuesta Unificado en la API REST
 
 ## Contexto
