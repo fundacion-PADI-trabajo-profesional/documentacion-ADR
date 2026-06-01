@@ -1,7 +1,9 @@
-# Documentación ADR
+# Registro de Decisiones de Arquitectura — Sistema PADI
 
-Repositorio que centraliza las ADR (Architectural Decision Records) del proyecto. El objetivo es registrar decisiones arquitectónicas relevantes, el contexto, las alternativas consideradas y las consecuencias.
+Repositorio de documentación arquitectónica del sistema **PADI** (*Programa de Atención al Desarrollo Infantil*), desarrollado como Trabajo Práctico Profesional en la **Universidad de Buenos Aires – Facultad de Ingeniería**.
 
-**Estructura del repositorio**
-- Archivo índice: [index.md](index.md) — índice y guía de lectura.
-- ADRs numeradas: Ej. [0001-arquitectura-en-capas-backend.md](0001-arquitectura-en-capas-backend.md), [0002-firebase-cloud-functions-backend.md](0002-firebase-cloud-functions-backend.md), etc.
+PADI es una plataforma web para la gestión y aplicación de evaluaciones del desarrollo infantil, utilizada por la Fundación PADI. El sistema comprende una API REST (Node.js + Firebase Cloud Functions), una base de datos PostgreSQL con Row Level Security (Supabase) y una interfaz web (React + TypeScript).
+
+Este repositorio centraliza los **Registros de Decisiones de Arquitectura (ADRs)**: documentos que registran cada decisión de diseño significativa, el contexto que la motivó, las alternativas descartadas y las consecuencias observadas.
+
+**Documentación publicada:** https://fundacion-padi-trabajo-profesional.github.io/documentacion-ADR/

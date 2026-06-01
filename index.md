@@ -8,23 +8,23 @@ Cada ADR documenta una decisión de diseño significativa: el contexto que la mo
 
 ## Índice de ADRs
 
-| Número | Título | 
-|---|---|
-| [ADR-0001](0001-arquitectura-en-capas-backend.md) | Arquitectura en Capas para el Backend | 
-| [ADR-0002](0002-firebase-cloud-functions-backend.md) | Firebase Cloud Functions como Plataforma de Despliegue del Backend | 
-| [ADR-0003](0003-postgresql-como-base-de-datos.md) | PostgreSQL como Sistema de Gestión de Base de Datos | 
-| [ADR-0004](0004-supabase-como-proveedor-de-autenticacion.md) | Supabase como Proveedor de Autenticación | 
-| [ADR-0005](0005-prisma-como-orm.md) | Prisma como ORM para el Acceso a Datos | 
-| [ADR-0006](0006-control-de-acceso-basado-en-roles.md) | Control de Acceso Basado en Roles (RBAC) | 
-| [ADR-0007](0007-react-typescript-frontend.md) | React con TypeScript como Framework de Frontend | 
-| [ADR-0008](0008-tanstack-query-gestion-estado-servidor.md) | TanStack React Query para la Gestión del Estado del Servidor | 
-| [ADR-0009](0009-inicializacion-lazy-clientes-externos.md) | Inicialización Lazy de Clientes Externos en Entorno Serverless | 
-| [ADR-0010](0010-formato-de-respuesta-unificado-api.md) | Formato de Respuesta Unificado en la API REST | 
-| [ADR-0011](0011-pruebas-de-contrato-frontend-backend.md) | Pruebas de Contrato entre Frontend y Backend | 
-| [ADR-0012](0012-gestion-de-secretos-google-cloud.md) | Gestión de Secretos con Google Cloud Secret Manager | 
-| [ADR-0013](0013-endurecimiento-capa-http.md) | Endurecimiento de la Capa HTTP (Helmet, CORS y Rate Limiting) | 
-| [ADR-0014](0014-manejo-diferenciado-errores-http.md) | Manejo Diferenciado de Errores HTTP (403 vs 500) | 
-| [ADR-0015](0015-proteccion-idor-endpoints-estadisticas-aula.md) | Protección IDOR en Endpoints de Estadísticas por Aula | 
+| Número | Título | Estado | Año |
+|---|---|---|---|
+| [ADR-0001](0001-arquitectura-en-capas-backend.md) | Arquitectura en Capas para el Backend | Aceptado | 2025 |
+| [ADR-0002](0002-firebase-cloud-functions-backend.md) | Firebase Cloud Functions como Plataforma de Despliegue del Backend | Aceptado | 2025 |
+| [ADR-0003](0003-postgresql-como-base-de-datos.md) | PostgreSQL como Sistema de Gestión de Base de Datos | Aceptado | 2025 |
+| [ADR-0004](0004-supabase-como-proveedor-de-autenticacion.md) | Supabase como Proveedor de Autenticación | Aceptado | 2025 |
+| [ADR-0005](0005-prisma-como-orm.md) | Prisma como ORM para el Acceso a Datos | Aceptado | 2025 |
+| [ADR-0006](0006-control-de-acceso-basado-en-roles.md) | Control de Acceso Basado en Roles (RBAC) | Aceptado | 2026 |
+| [ADR-0007](0007-react-typescript-frontend.md) | React con TypeScript como Framework de Frontend | Aceptado | 2025 |
+| [ADR-0008](0008-tanstack-query-gestion-estado-servidor.md) | TanStack React Query para la Gestión del Estado del Servidor | Aceptado | 2025 |
+| [ADR-0009](0009-inicializacion-lazy-clientes-externos.md) | Inicialización Lazy de Clientes Externos en Entorno Serverless | Aceptado | 2025 |
+| [ADR-0010](0010-formato-de-respuesta-unificado-api.md) | Formato de Respuesta Unificado en la API REST | Aceptado | 2025 |
+| [ADR-0011](0011-pruebas-de-contrato-frontend-backend.md) | Pruebas de Contrato entre Frontend y Backend | Aceptado | 2026 |
+| [ADR-0012](0012-gestion-de-secretos-google-cloud.md) | Gestión de Secretos con Google Cloud Secret Manager | Aceptado | 2026 |
+| [ADR-0013](0013-endurecimiento-capa-http.md) | Endurecimiento de la Capa HTTP (Helmet, CORS y Rate Limiting) | Aceptado | 2026 |
+| [ADR-0014](0014-manejo-diferenciado-errores-http.md) | Manejo Diferenciado de Errores HTTP (403 vs 500) | Aceptado | 2026 |
+| [ADR-0015](0015-proteccion-idor-endpoints-estadisticas-aula.md) | Protección IDOR en Endpoints de Estadísticas por Aula | Aceptado | 2026 | 
 
 ---
 
