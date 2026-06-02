@@ -45,6 +45,37 @@ El rol y los identificadores del usuario se obtienen del objeto `req.user`, que 
 
 Los cuatro roles posibles están definidos como un enum en Prisma: `docente`, `director`, `encargado_zona`, `equipo_padi`.
 
+### Flujo de autorización
+
+```mermaid
+flowchart TD
+    Req([Request HTTP]) --> Auth["requireAuth\nValida JWT · carga req.user"]
+    Auth -->|Token inválido o ausente| E401["HTTP 401\nUnauthorized"]
+    Auth -->|Token válido| Role["requireRole\nVerifica rol permitido para el endpoint"]
+    Role -->|Rol no permitido| E403["HTTP 403\nForbidden"]
+    Role -->|Rol permitido| Svc["Servicio\nAplica filtro según rol"]
+
+    Svc --> D{"docente"}
+    Svc --> Dir{"director"}
+    Svc --> Enc{"encargado_zona"}
+    Svc --> Padi{"equipo_padi"}
+
+    D -->|"Filtra por aulas asignadas"| DB[("PostgreSQL")]
+    Dir -->|"Filtra por escuela_id"| DB
+    Enc -->|"Filtra por zona_id"| DB
+    Padi -->|"Sin filtro — acceso total"| DB
+```
+
+### Matriz de permisos por recurso
+
+| Recurso | `docente` | `director` | `encargado_zona` | `equipo_padi` |
+|---|---|---|---|---|
+| Evaluaciones | Sus aulas | Su escuela | Su zona | Todas |
+| Estudiantes | Sus aulas | Su escuela | Su zona | Todos |
+| Estadísticas | Sus aulas | Su escuela | Su zona | Global |
+| Escuelas y aulas | — | Su escuela | Su zona | Todas |
+| Usuarios y administración | — | — | — | Gestión completa |
+
 ## Alternativas Consideradas
 
 - **Control de Acceso Basado en Atributos (ABAC):** Modelo más granular donde los permisos se definen en función de atributos del usuario, del recurso y del entorno. Fue descartado por su complejidad de implementación y configuración, que excede los requisitos del sistema actual. El modelo RBAC con filtrado por jerarquía organizacional cubre todos los casos de uso identificados.

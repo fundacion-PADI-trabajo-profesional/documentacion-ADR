@@ -30,6 +30,27 @@ El flujo de una petición sigue siempre la dirección: `Middleware → Ruta → 
 
 Cada capa únicamente se comunica con la capa inmediatamente inferior; no se admiten dependencias salteadas (por ejemplo, un controlador no accede directamente a un repositorio).
 
+```mermaid
+flowchart TD
+    Cliente(["Cliente HTTP"]) --> MW
+
+    subgraph Express ["Express App"]
+        MW["Middlewares\nHelmet · CORS · requireAuth"]
+        R["Rutas\nsrc/routes/*.router.ts"]
+        C["Controladores\nsrc/controllers/*.controller.ts"]
+        S["Servicios\nsrc/services/*.service.ts"]
+        RP["Repositorios\nsrc/repositories/*.repository.ts"]
+    end
+
+    DB[("PostgreSQL\nSupabase")]
+
+    MW --> R
+    R --> C
+    C --> S
+    S --> RP
+    RP --> DB
+```
+
 ## Alternativas Consideradas
 
 - **Arquitectura hexagonal (puertos y adaptadores):** Ofrece mayor desacoplamiento al definir interfaces abstractas entre capas. Fue descartada por su complejidad de setup y la curva de aprendizaje que impondría, considerando que el equipo de desarrollo es reducido y el tiempo de tesis es acotado.
