@@ -16,6 +16,10 @@ Se necesitaba un patrón de organización que:
 - Facilitara la incorporación de nuevos endpoints o módulos siguiendo una convención predecible.
 - Fuera comprensible por cualquier colaborador sin necesidad de documentación adicional.
 
+El siguiente diagrama C4 muestra los contenedores que componen la plataforma y sus relaciones:
+
+![Diagrama de contenedores de la Plataforma PADI](diagramas/c4_contenedores.png)
+
 ## Decisión
 
 Se adoptó una **arquitectura en capas estricta de cuatro niveles** para todo el backend:
@@ -51,6 +55,14 @@ flowchart TD
     S --> RP
     RP --> DB
 ```
+
+El stack tecnológico completo de la plataforma, incluyendo las relaciones entre frontend, backend, datos e infraestructura:
+
+![Diagrama de Tecnologías de la Plataforma PADI](diagramas/tecnologias.png)
+
+El siguiente diagrama de secuencia muestra cómo las capas interactúan durante el flujo completo de toma de una evaluación, desde la autenticación hasta el cálculo de resultados:
+
+![Diagrama de Secuencia de Evaluaciones de la Plataforma PADI](diagramas/secuencia_evaluaciones.png)
 
 ## Alternativas Consideradas
 
