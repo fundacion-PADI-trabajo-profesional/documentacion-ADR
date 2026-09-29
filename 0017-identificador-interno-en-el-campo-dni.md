@@ -30,15 +30,16 @@ frontend validan que el valor sea numérico.
 ## Decisión
 
 Cuando un alumno no tiene DNI disponible, el colegio carga en el campo DNI un **identificador
-interno**: las letras que identifican al colegio seguidas de un número correlativo, sin espacios ni
-guiones y en mayúsculas. Ejemplos: `SM000001`, `STE000042`.
+interno** armado con las letras del jardín, la fecha de nacimiento como día, mes y año de dos cifras
+cada uno, y la inicial del nombre seguida de la inicial del apellido; todo junto, sin espacios ni
+guiones y en mayúsculas. Ejemplo: `SM040621RM` (jardín SM, nacido el 4 de junio de 2021, Ramiro
+Martínez). El colegio puede armarlo sin llevar ningún registro.
 
 Reglas del procedimiento, acordadas con la Fundación y fuera de la app:
 
-1. Las letras del colegio las asigna la Fundación PADI, para que dos colegios no usen las mismas.
-2. Un número se usa una sola vez. Nunca se reutiliza el de un alumno que se fue.
-3. El identificador acompaña al alumno todos los años, aunque cambie de colegio dentro de PADI.
-4. Cuando se consigue el DNI real, se reemplaza desde la edición del alumno antes de la siguiente
+1. Las letras del jardín las asigna la Fundación PADI, para que dos colegios no usen las mismas.
+2. El identificador acompaña al alumno todos los años, aunque cambie de colegio dentro de PADI.
+3. Cuando se consigue el DNI real, se reemplaza desde la edición del alumno antes de la siguiente
    importación masiva, para que el Excel ya lleve el DNI.
 
 Lo que cambia en la app (solo frontend):
@@ -47,8 +48,13 @@ Lo que cambia en la app (solo frontend):
   valor de solo dígitos es un DNI real (`src/utils/dni.ts`). **No se interpreta el prefijo**: la
   asociación alumno → colegio ya existe en `estudiantes.escuela_id` y no se duplica en el código.
 - El frontend normaliza lo que se escribe (mayúsculas, solo letras y dígitos) tanto en el
-  formulario individual como al leer el Excel de carga masiva, para que `sm-000001` y `SM000001`
-  sean el mismo alumno. De paso, un DNI real escrito como `45.123.456` queda como `45123456`.
+  formulario individual como al leer el Excel de carga masiva, para que `sm-040621rm` y
+  `SM040621RM` sean el mismo alumno.
+- El alta individual y la plantilla de carga masiva muestran cómo armar el identificador: la
+  plantilla titula la columna "DNI / ID interno", lleva una nota en el encabezado y una hoja
+  "Instrucciones". La convención está en un solo lugar (`ID_INTERNO` en `src/utils/dni.ts`).
+- La carga masiva rechaza identificadores repetidos dentro del mismo archivo antes de enviar; el
+  alta individual ya rechazaba un identificador existente por el índice único. De paso, un DNI real escrito como `45.123.456` queda como `45123456`.
 - Las pantallas y el exporte a Excel rotulan el valor como "ID interno" cuando tiene letras, para
   que nadie lo copie a un documento oficial creyendo que es un DNI.
 - El backend no cambia.
@@ -87,8 +93,10 @@ Lo que cambia en la app (solo frontend):
   la app. Si dos colegios usan el mismo prefijo, la carga masiva "traslada" a un alumno en lugar
   de crear otro. La previsualización lo muestra como promovido o repitente en vez de nuevo, y esa
   es la señal para detectarlo.
-- Reutilizar un número reactiva al alumno viejo y le sobreescribe nombre y fecha de nacimiento con
-  los del nuevo.
+- Dos alumnos del mismo jardín con igual fecha de nacimiento e iniciales generan el mismo
+  identificador. El alta individual lo rechaza como duplicado y la carga masiva lo detecta dentro
+  del archivo; contra un alumno ya cargado, la importación lo tomaría como la misma persona. Es tan
+  improbable que no se explica a los colegios; si ocurre, se cambia una letra del código.
 - Evoluciones posibles si el procedimiento manual resulta frágil: planilla de carga masiva
   precargada con los alumnos actuales y sus identificadores, y una columna `codigo` en `escuelas`
   para que la app valide el prefijo.
