@@ -32,6 +32,7 @@ Cada ADR documenta una decisión de diseño significativa: el contexto que la mo
 | [ADR-0015](0015-proteccion-idor-endpoints-estadisticas-aula.md) | Protección IDOR en Endpoints de Estadísticas por Aula | Aceptado | 2026 | 
 | [ADR-0016](0016-generacion-de-reportes-pdf-en-el-cliente.md) | Generación de reportes PDF en el cliente con @react-pdf/renderer | Aceptado | 2026 |
 | [ADR-0017](0017-identificador-interno-en-el-campo-dni.md) | Identificador interno del colegio en el campo DNI del alumno | Aceptado | 2026 | 
+| [ADR-0018](0018-minimo-de-aprobacion-por-pauta-en-datos.md) | Mínimo de aprobación por pauta como dato de la pregunta | Aceptado | 2026 |
 
 ---
 
