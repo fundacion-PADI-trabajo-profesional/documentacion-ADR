@@ -35,6 +35,7 @@ Cada ADR documenta una decisión de diseño significativa: el contexto que la mo
 | [ADR-0018](0018-minimo-de-aprobacion-por-pauta-en-datos.md) | Mínimo de aprobación por pauta como dato de la pregunta | Aceptado | 2026 |
 | [ADR-0019](0019-baja-de-usuarios-consistente.md) | Baja de usuarios consistente entre Supabase Auth y la base de la aplicación | Aceptado | 2026 |
 | [ADR-0020](0020-preguntas-para-el-evaluador.md) | Preguntas para el evaluador como datos de la evaluación | Aceptado | 2026 |
+| [ADR-0021](0021-una-evaluacion-por-etapa.md) | Una evaluación por etapa: tipo según la época del año y continuar la existente | Aceptado | 2026 |
 
 ---
 
