@@ -38,9 +38,15 @@ sola función pura del frontend, `tipoPorDefecto(evaluaciones, sala, año, mes)`
 `frontend/src/utils/tipo-evaluacion.ts`, con la constante `MES_INICIO_CIERRE = 8`.
 
 **Si la evaluación que toca ya existe, se continúa esa.** Cuando el alumno ya tiene la evaluación
-del tipo de la época (misma sala y año), el formulario lo avisa, muestra "Continuar esa evaluación"
-(abre la existente) y deshabilita "Crear" mientras el tipo elegido sea ese. Lo mismo ofrece si el
-servidor rechaza el alta: el error trae el id de la evaluación existente.
+del tipo de la época (misma sala y año), o ya tiene el cierre, el formulario muestra un aviso
+informativo con "Continuar esa evaluación" (abre la existente) y oculta el alta. Sólo ofrece crear
+si todavía queda algo por crear (el cierre, cuando lo que existe es la inicial).
+
+**El formulario sólo deja elegir lo que el servidor aceptaría.** `tipoPorDefecto` devuelve
+`puedeCrear` con las mismas reglas del servidor (una de cada tipo; ninguna inicial después del
+cierre) y las opciones que no se pueden crear aparecen deshabilitadas. El objetivo es que la persona
+no llegue a un mensaje de error por algo que no eligió; el rechazo del servidor queda como red de
+seguridad para el caso de dos personas creando a la vez, y también ofrece continuar la existente.
 
 **No se crea una inicial con fecha igual o posterior a la del cierre.** El servidor rechaza el alta
 de una inicial si el alumno ya tiene el cierre de esa sala y ese año con fecha igual o anterior,
