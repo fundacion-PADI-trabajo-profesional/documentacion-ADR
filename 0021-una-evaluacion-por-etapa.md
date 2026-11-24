@@ -54,6 +54,15 @@ con el mismo `TIPO_DUPLICADO` y el cierre en `error.details.evaluacion_existente
 (`verificarInicialDespuesDeCierre` en `backend/functions/src/services/evaluaciones.service.ts`).
 Una inicial con fecha anterior al cierre se acepta: es la carga atrasada de una inicial real.
 
+**La evaluación lleva el aula del alumno aunque el formulario no la mande.** El permiso de la docente
+del aula se chequea contra el aula de la evaluación, así que una evaluación sin aula no la puede
+continuar nadie más. Si el alta llega sin `aula_id`, el servidor la deduce de las aulas activas del
+alumno: la única que tenga o, si tiene varias, la única de la misma sala que la evaluación; si no
+puede decidir, la deja sin aula (`elegirAulaDeEvaluacion` en
+`backend/functions/src/utils/evaluaciones-aula.ts`). Con esa misma regla se completaron el
+24/11/2026 51 de las 53 evaluaciones que estaban sin aula
+(`backend/scripts/sql/2026-11-24-asignar-aula-evaluaciones*.sql`).
+
 **Criterio de la corrección de datos** (para repetirla si hiciera falta): entre las evaluaciones del
 mismo alumno y sala queda la que tiene más respuestas; recibe las respuestas que le falten; ante dos
 respuestas distintas a la misma pregunta vale la más reciente; las sobrantes se respaldan y se
@@ -83,6 +92,11 @@ borran; se recalculan puntaje y estado de las áreas tocadas. No se reevalúa a 
   atrasa la campaña de cierre, se cambia `MES_INICIO_CIERRE`.
 - Quien evalúa sin estar asignada al aula (o una evaluación sin aula cargada) sigue sin poder abrir
   la evaluación de otra persona: recibe 403. Si ese caso aparece, es una decisión de permisos aparte.
+- La deducción del aula depende de que las asignaciones alumno–aula estén bien. El 24/11/2026 había
+  alumnos con dos aulas activas (16 de una misma escuela, en su sala 3 y en un aula de sala 5 con 84
+  alumnos y ningún docente). Las estadísticas no se duplican por eso (cuentan evaluaciones, y cada
+  una tiene un aula sola), pero conviene revisarlo antes de los reportes:
+  `backend/scripts/sql/2026-11-24-control-datos-reporte.sql`.
 - `profesor_id` muestra a quien creó la evaluación; no queda registro de quién respondió cada área.
 - Cambiar el tipo de una evaluación existente (`PATCH /evaluaciones/:id`) no aplica el freno nuevo:
   es la herramienta para corregir a mano una evaluación mal rotulada.
